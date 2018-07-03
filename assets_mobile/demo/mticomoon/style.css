@@ -1,0 +1,138 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?hvcuub');
+  src:  url('fonts/icomoon.eot?hvcuub#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?hvcuub') format('truetype'),
+    url('fonts/icomoon.woff?hvcuub') format('woff'),
+    url('fonts/icomoon.svg?hvcuub#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="mt-icon-"], [class*=" mt-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mt-icon-add:before {
+  content: "\e900";
+}
+.mt-icon-address:before {
+  content: "\e901";
+}
+.mt-icon-alipay:before {
+  content: "\e902";
+  color: #009fe8;
+}
+.mt-icon-arrow-bottom:before {
+  content: "\e903";
+}
+.mt-icon-arrow-left:before {
+  content: "\e904";
+}
+.mt-icon-arrow-right:before {
+  content: "\e905";
+}
+.mt-icon-arrow-top:before {
+  content: "\e906";
+}
+.mt-icon-booking:before {
+  content: "\e907";
+}
+.mt-icon-cart:before {
+  content: "\e908";
+}
+.mt-icon-checked:before {
+  content: "\e909";
+}
+.mt-icon-clock:before {
+  content: "\e90a";
+}
+.mt-icon-clock2:before {
+  content: "\e90b";
+}
+.mt-icon-close:before {
+  content: "\e90c";
+}
+.mt-icon-coupon:before {
+  content: "\e90d";
+}
+.mt-icon-edit:before {
+  content: "\e90e";
+}
+.mt-icon-fail:before {
+  content: "\e90f";
+}
+.mt-icon-home:before {
+  content: "\e910";
+}
+.mt-icon-info:before {
+  content: "\e911";
+}
+.mt-icon-list:before {
+  content: "\e912";
+}
+.mt-icon-location:before {
+  content: "\e913";
+}
+.mt-icon-lock:before {
+  content: "\e914";
+}
+.mt-icon-menu:before {
+  content: "\e915";
+}
+.mt-icon-minus:before {
+  content: "\e916";
+}
+.mt-icon-mobile:before {
+  content: "\e917";
+}
+.mt-icon-order:before {
+  content: "\e918";
+}
+.mt-icon-power:before {
+  content: "\e919";
+}
+.mt-icon-question:before {
+  content: "\e91a";
+}
+.mt-icon-recovery:before {
+  content: "\e91b";
+}
+.mt-icon-remove:before {
+  content: "\e91c";
+}
+.mt-icon-scode:before {
+  content: "\e91d";
+}
+.mt-icon-shop:before {
+  content: "\e91e";
+}
+.mt-icon-success:before {
+  content: "\e91f";
+}
+.mt-icon-truck:before {
+  content: "\e920";
+}
+.mt-icon-uncheck:before {
+  content: "\e921";
+}
+.mt-icon-user:before {
+  content: "\e922";
+}
+.mt-icon-user2:before {
+  content: "\e923";
+}
+.mt-icon-volume:before {
+  content: "\e924";
+}

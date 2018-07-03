@@ -1,0 +1,47 @@
+{
+  "name": "koa-mvc",
+  "version": "0.0.1",
+  "description": "web base on koa",
+  "scripts": {
+    "start": "nodemon ./index.js",
+    "start-debug": "nodemon --inspect index.js"
+  },
+  "main": "app.js",
+  "dependencies": {
+    "7": "^0.0.1",
+    "axios": "^0.18.0",
+    "bcrypt": "^2.0.1",
+    "bluebird": "^3.5.1",
+    "joi": "^13.2.0",
+    "koa": "^2.4.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-convert": "^1.2.0",
+    "koa-cors": "0.0.16",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "nunjucks": "^3.1.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "cross-env": "^5.1.4",
+    "nodemon": "^1.17.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coocssweb/coo-koa.git"
+  },
+  "keywords": [
+    "koa"
+  ],
+  "author": "coocssweb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coocssweb/koa-mvc/issues"
+  },
+  "homepage": "https://github.com/coocssweb/koa-mvc#readme"
+}

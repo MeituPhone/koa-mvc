@@ -1,0 +1,17 @@
+.innerLoading{
+    text-align: center;
+    padding-top: 30px;
+    >span{
+        display: inline-block;
+        line-height: 36px;
+    }
+    &-icon{
+        float: left;
+    }
+    &-message{
+        font-size: 28px;
+        color: $color-gray;
+        float: left;
+        margin-left: 10px;
+    }
+}

@@ -1,0 +1,153 @@
+@import "../variables/colors";
+@import "normalize";
+@import "iconfont";
+@import "none";
+@import "toast";
+@import "tip";
+@import "gloading";
+@import "iloading";
+
+html, body{
+    background: transparent;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    background-color: #ffffff;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+#app{
+    height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    &.no-scroll{
+        overflow-y: hidden;
+    }
+    &.has-menus{
+        padding-bottom: 100px;
+    }
+}
+
+dd, dl, dt, p, nav, div, ul,li, header, h1, h2, h3, h4, h5, h6,iframe, button{
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    font-weight: normal;
+}
+input{
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+a{
+    text-decoration:  none;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    outline: none;
+}
+
+button, div{
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+
+
+ul, li, h3{
+    list-style: none;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+
+::-webkit-input-placeholder{
+    color: #c0c0c0;
+    font-size: 14PX;
+}
+::-moz-placeholder{
+    color: #c0c0c0;
+    font-size: 14PX;
+}
+:-ms-input-placeholder{
+    color: #c0c0c0;
+    font-size: 14PX;
+}
+
+input:disabled {
+    color: #555555;
+}
+
+::selection {
+    background-color: #0087cd;
+    color: #fff;
+}
+::selection {
+    background-color: #0087cd;
+    color: #fff;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+
+#app{
+    max-width: 750PX;
+    margin: 0px auto;
+    position: relative;
+}
+
+.end-data{
+    text-align: center;
+    color: #CCCCCC;
+    font-size: 24px;
+    padding: 30px 0px;
+    img{
+        display: block;
+        width: 150px;
+        margin: 0px auto;
+    }
+    span{
+        margin-top: -5px;
+        display: inline-block;
+        background-color: #edecec;
+        padding: 5px 10px;
+        line-height: 1;
+        border-radius: 3px;
+    }
+}
+.lazy{
+    &-box{
+        position: relative;
+    }
+    &-thumb{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        background-color: #f8f7f8;
+        z-index: 2;
+        img{
+            position: absolute;
+            width: 220px;
+            left: 50%;
+            top: 50%;
+            margin-left: -110px;
+            margin-top: -110px;
+        }
+    }
+
+}
