@@ -8,6 +8,9 @@
 ## 启动服务端代码
 `npm start`
 
+## demo访问
+http://localhost:3000/api/bilibili/ding
+
 ## 目录说明
 
 ```bash
@@ -25,6 +28,7 @@
     ├──utils/                      * 工具文件
 
 ```
+
 
 ## 静态资源模板
 /asserts_mobile/layout/index.js 模板渲染入口，使用ejs作为前端文件引擎
