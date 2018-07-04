@@ -18,6 +18,35 @@
     <link rel="dns-prefetch" href="//js.app.meitudata.com">
     <link rel="dns-prefetch" href="//c.cnzz.com">
     <link rel="dns-prefetch" href="//w.cnzz.com">
+    <script type="text/javascript">
+        ;(function(win,doc){
+            var docEl = doc.documentElement,
+                UA    = navigator.userAgent,
+                isMeitu = /meitu|meipai/gi.test(UA);
+            var refreshRem =function (){
+                var w =docEl.getBoundingClientRect().width || 320;
+                var fontSize = w/750 * 200;
+                fontSize = fontSize > 200 ? 200 : fontSize;
+                docEl.style.fontSize = fontSize+'px';
+                var finalFontSize = parseFloat(win.getComputedStyle(docEl).getPropertyValue("font-size"));
+                if(finalFontSize === fontSize || isMeitu) return;
+                fontSize = fontSize+(fontSize-finalFontSize);
+                docEl.style.fontSize = fontSize+'px';
+                win.fontSize = fontSize;
+            },refreshRemId;
+            win.addEventListener('resize', function() {
+                clearTimeout(refreshRemId);
+                refreshRemId = setTimeout(refreshRem, 100);
+            }, false);
+            win.addEventListener('pageshow', function(e) {
+                if (e.persisted) {
+                    clearTimeout(refreshRemId);
+                    refreshRemId = setTimeout(refreshRem, 100);
+                }
+            }, false);
+            refreshRem();
+        })(window,document);
+    </script>
 </head>
 <body>
 <%= header %>

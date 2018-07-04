@@ -24,8 +24,8 @@ app.use(BodyParser());
 app.use(errorHandle());
 
 app.use(templating('dist/views', {
-    noCache: false,
-    watch: false
+    noCache: true,
+    watch: true
 }));
 
 app.use(routes.routes(), routes.allowedMethods());

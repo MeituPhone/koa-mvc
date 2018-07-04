@@ -14,6 +14,7 @@ http://localhost:3000/api/bilibili/ding
 ## 目录说明
 
 ```bash
+    ├──assets_common/              * 通用的静态资源
     ├──assets_mobile/              * mobile 静态资源
     ├──pc_mobile/                  * pc 静态资源
     ├──dist/                       * 构建后的文件
@@ -37,3 +38,72 @@ http://localhost:3000/api/bilibili/ding
 /templating.js 使用nunjucks 作为koa2的模板渲染引擎
 
 https://mozilla.github.io/nunjucks/ 文档说明
+
+## 本地开发域名配置
+
+#### 静态资源域名（assets.meitu.com）配置
+```
+    ### switchhost配置
+    127.0.0.1	assets.meitu.com
+```
+```
+    ### 本地服务器配置
+    <VirtualHost *:80>
+        ServerAdmin zhy@meitu.com
+        DocumentRoot "/www/koa-mvc/dist"
+        ServerName assets.meitu.com
+        ServerAlias assets.meitu.com
+        DirectoryIndex index.html index.php
+        Header set Access-Control-Allow-Origin "*"
+
+        <Directory "/www/koa-mvc/dist">
+         	DirectoryIndex index.html index.php
+                SetEnv  MY_ENV local
+                AllowOverride All
+                #Order allow,deny
+                Allow from all
+                Require all granted
+                RewriteEngine on
+                RewriteCond %{REQUEST_FILENAME} !-f
+                RewriteRule .* index.php
+        </Directory>
+        #ErrorLog "/www/log/assets.meitu.com.log"
+        #CustomLog "/www/log/assets.meitu.com.err" common
+    </VirtualHost>
+```
+
+#### 本地开发域名（localmall.meitu.com）配置
+```
+    ### switchhost配置
+    127.0.0.1	localmall.meitu.com
+```
+```
+    ### 本地服务器配置
+<VirtualHost *:80>
+    ServerAdmin zhy@meitu.com
+    DocumentRoot "/www/koa-mvc/dist"
+    ServerName localmall.meitu.com
+    ServerAlias localmall.meitu.com
+    DirectoryIndex index.html index.php
+    Header set Access-Control-Allow-Origin "*"
+
+    <Location "/">
+         ProxyPass http://localhost:3000/
+         ProxyPassReverse http://localhost:3000/
+    </Location>
+
+    <Directory "/www/koa-mvc/dist">
+     	DirectoryIndex index.html index.php
+            SetEnv  MY_ENV local
+            AllowOverride All
+            #Order allow,deny
+            Allow from all
+            Require all granted
+            RewriteEngine on
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteRule .* index.php
+    </Directory>
+    #ErrorLog "/www/log/localmall.meitu.com.log"
+    #CustomLog "/www/log/localmall.meitu.com.err" common
+</VirtualHost>
+```

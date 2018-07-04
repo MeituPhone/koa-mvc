@@ -16,6 +16,7 @@ html, body{
 
 body {
     font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 28px;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -23,21 +24,11 @@ body {
     background-color: #ffffff;
 }
 
-html, body {
-    height: 100%;
-    overflow: hidden;
-}
-
 #app{
-    height: 100%;
-    overflow-y: auto;
-    box-sizing: border-box;
-    &.no-scroll{
-        overflow-y: hidden;
-    }
-    &.has-menus{
-        padding-bottom: 100px;
-    }
+    max-width: 750PX;
+    margin: 0px auto;
+    position: relative;
+    overflow: hidden;
 }
 
 dd, dl, dt, p, nav, div, ul,li, header, h1, h2, h3, h4, h5, h6,iframe, button{
@@ -100,13 +91,6 @@ input:disabled {
     line-height: 0;
     clear: both;
     visibility: hidden;
-}
-
-
-#app{
-    max-width: 750PX;
-    margin: 0px auto;
-    position: relative;
 }
 
 .end-data{
