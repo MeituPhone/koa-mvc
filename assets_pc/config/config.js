@@ -79,7 +79,7 @@ module.exports = {
     },
     development: {
         // 开发 devServer 端口
-        port: 8089,
+        port: 8088,
         devtool: 'source-map',
         NODE_ENV: 'development',
         ORIGIN_URL: 'http://pages.meitu.com',
@@ -87,7 +87,7 @@ module.exports = {
         jsSourceMap: false,
         cssSourceMap: false,
         eslint: false,
-        staticPath: 'http://assets.meitu.com/mobile/',
+        staticPath: 'http://assets.meitu.com/pc/',
         cssPath: '',
         imgPath: '/',
         ACCOUNT_DOMAIN: 'http://preaccount.meitu.com',

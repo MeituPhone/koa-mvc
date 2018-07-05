@@ -16,7 +16,7 @@ module.exports = function webpackBaseConfig (NODE_ENV = 'development') {
 
     let plugins = [
         new ExtractTextPlugin({
-            filename: 'v1/css/[name].css',
+            filename: 'v1/css/[name].[contenthash:8].css',
             allChunks: true
         }),
         new webpack.optimize.CommonsChunkPlugin({
@@ -40,13 +40,12 @@ module.exports = function webpackBaseConfig (NODE_ENV = 'development') {
 
     files.forEach((item) => {
         entry[item] = resolve('src', item + '.js');
-        let filename = 'views/' + item.substring(item.indexOf('/') + 1, item.length);
         plugins.push(
             new HtmlWebpackPlugin({
-                filename: filename + '.html',
+                filename: 'public/mobile_html/' + item + '.html',
                 template: path.resolve('./src/' + item + '-render.js'),
                 chunks: ['common', item],
-                hash: true,
+                hash: false,
                 inject: 'body',
                 xhtml: false,
                 minify: {
@@ -56,15 +55,13 @@ module.exports = function webpackBaseConfig (NODE_ENV = 'development') {
         );
     });
 
-    console.log(entry);
-
     const webpackConfig = {
         entry,
         output: {
-            path: resolve('../dist/mobile'),
+            path: resolve('../../src/App/Home/'),
             publicPath: config.staticPath,
-            filename: 'v1/js/[name].js',
-            chunkFilename: 'v1/js/[name].js'
+            filename: 'v1/mobile/js/[name].[hash:8].js',
+            chunkFilename: 'v1/mobile/js/[name].[hash:8].js'
         },
         externals: {
             jquery: '$'
@@ -96,11 +93,11 @@ module.exports = function webpackBaseConfig (NODE_ENV = 'development') {
                 },
                 {
                     test: /\.(png|jpg|gif|svg)$/,
-                    loader: 'url-loader?limit=1&name=v1/images/[name].[ext]'
+                    loader: 'url-loader?limit=1&name=v1/mobile/images/[hash:8].[name].[ext]'
                 },
                 {
                     test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-                    loader: 'file-loader?name=v1/fonts/[name].[ext]'
+                    loader: 'file-loader?name=v1/mobile/fonts/[hash:8].[name].[ext]'
                 },
                 {
                     test: /\.(scss|css)$/,
@@ -135,23 +132,18 @@ module.exports = function webpackBaseConfig (NODE_ENV = 'development') {
         },
     };
 
-    // 开发环境服务器配置
-    webpackConfig.devServer = {
-        contentBase: resolve('dist'),
-        compress: false,
-        host: '127.0.0.1',
-        port: config.port,
-        hot: true,                                  // 热启动
-        disableHostCheck: true,
-        historyApiFallback: true
-    };
-
-    // webpack watch 配置
-    webpackConfig.watchOptions = {
-        poll: 500,
-        aggregeateTimeout: 500,
-        ignored: 'node_modules'
-    };
+    webpackConfig.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false,
+                dead_code: true
+            },
+            sourceMap: false,
+            output: {
+                comments: false
+            }
+        })
+    );
 
     return webpackConfig;
 };

@@ -21,11 +21,19 @@ function createEnv(path, opts) {
     return env;
 }
 
-function templating(path, opts) {
-    let env = createEnv(path, opts);
+function templating(opts) {
+    const PC_VIEWS = 'dist/pc/views';
+    const MOBILE_VIEWS = 'dist/mobile/views';
+
+    let PC_ENV = createEnv(PC_VIEWS, opts);
+    let MOBILE_ENV = createEnv(MOBILE_VIEWS, opts);
+
     return async (ctx, next) => {
+        const DEVICE_AGENT = ctx.request.headers['user-agent'].toLowerCase();
+        const ENV = DEVICE_AGENT.match(/(iphone|ipod|ipad|android)/) ? MOBILE_ENV : PC_ENV;
+
         ctx.render = function (view, model) {
-            ctx.response.body = env.render(view, Object.assign({}, ctx.state || {}, model || {}));
+            ctx.response.body = ENV.render(view, Object.assign({}, ctx.state || {}, model || {}));
             ctx.response.type = 'text/html';
         };
         await next();

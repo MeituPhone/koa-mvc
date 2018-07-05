@@ -1,10 +1,11 @@
 import Router from 'koa-router';
-import bilibiliControl from '../controllers/meitu';
+import meiuControl from '../controllers/meitu';
 
 let router = new Router({
-    prefix: '/api/bilibili'
+    prefix: '/bilibili'
 });
 
-router.get('/ding', bilibiliControl.ding);
+router.get('/', meiuControl.ding);
+router.get('/dtail', meiuControl.ding);
 
 export default router;

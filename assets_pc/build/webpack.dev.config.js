@@ -61,7 +61,7 @@ module.exports = function webpackBaseConfig (NODE_ENV = 'development') {
     const webpackConfig = {
         entry,
         output: {
-            path: resolve('../dist/mobile'),
+            path: resolve('../dist/pc'),
             publicPath: config.staticPath,
             filename: 'v1/js/[name].js',
             chunkFilename: 'v1/js/[name].js'

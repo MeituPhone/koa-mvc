@@ -7,21 +7,16 @@
 @import "gloading";
 @import "iloading";
 
-html{
-    -webkit-text-size-adjust: none;
-    -webkit-font-smoothing: antialiased;
-}
-
 html, body{
     background: transparent;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     box-sizing: border-box;
-    height: 100%;
 }
 
 body {
     font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14PX;
+    font-size: 14px;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -30,8 +25,6 @@ body {
 }
 
 #app{
-    max-width: 750PX;
-    margin: 0px auto;
     position: relative;
     overflow: hidden;
 }

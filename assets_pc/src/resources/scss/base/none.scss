@@ -1,0 +1,26 @@
+.globalNone{
+    padding-top: 100px;
+    &-icon{
+        height: 150PX;
+        width: 150PX;
+        margin: 0px auto;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        &——cart{
+            background-image: url(//mtshop1.meitudata.com/5b1a353e2201e56377.png);
+        }
+        &——order{
+            background-image: url(//mtshop1.meitudata.com/5b1a34ffeb9ed13657.png);
+        }
+        &——coupon{
+            background-image: url(//mtshop1.meitudata.com/5b1a35353532394182.png);
+        }
+    }
+    &-message{
+        font-size: 30px;
+        color: $color-gray;
+        text-align: center;
+        font-weight: 600;
+    }
+}

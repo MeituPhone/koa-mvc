@@ -1,0 +1,19 @@
+<h2>{{ title }}</h2>
+<ul>
+    {% for item in users %}
+    <li>{{item.name}}: {{item.age}}</li>
+    {% endfor %}
+</ul>
+<ul>
+    {% for item in balls %}
+    <li>{{item.name}}</li>
+    {% endfor %}
+</ul>
+
+<div class="result">
+    {{ data }}
+</div>
+
+<div class="footer">
+    PC端底部
+</div>

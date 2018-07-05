@@ -1,0 +1,83 @@
+@import "../variables/colors";
+
+@keyframes dialog-in {
+    0%{
+        transform: translateY(0PX) translateZ(0);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(10PX) translateZ(0);
+    }
+}
+
+
+@keyframes dialog-mask-in {
+    0%{
+        opacity: 0;
+    }
+    40%{
+        opacity: 1;
+    }
+}
+
+.dialog{
+    &-mask{
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 10;
+        &.show{
+            display: block;
+            animation: dialog-mask-in 1s ease forwards;
+        }
+    }
+
+    &-wrapper{
+        position: absolute;
+        width: 80%;
+        top: 15%;
+        left: 10%;
+        background-color: $color-white;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+        &.show{
+            display: block;
+            animation: dialog-in 1s ease forwards;
+        }
+    }
+    &-content{
+        font-size: 34px;
+        padding: 80px 40px 40px 40px;
+        text-align: center;
+    }
+
+    &-footer{
+        line-height: 1;
+        text-align: right;
+        padding: 30px;
+        font-size: 28px;
+        a{
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 6px;
+            line-height: 1;
+            &:active{
+                opacity: 0.8;
+            }
+        }
+    }
+
+    &-confirm{
+        color: $color-white;
+        background-color: $color-pink;
+    }
+
+    &-cancel{
+        color: $color-gray;
+        margin-right: 10px;
+    }
+}

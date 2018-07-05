@@ -23,7 +23,7 @@ app.use(BodyParser());
 //错误处理
 app.use(errorHandle());
 
-app.use(templating('dist/views', {
+app.use(templating({
     noCache: true,
     watch: true
 }));
